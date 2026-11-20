@@ -1,10 +1,8 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
   "manifest_version": 3,
   "name": "Free4talk Pro",
-  "description": "Powerful tools to enhance your Free4Talk experience with user insights and more.",
-  "version": "1.0.0",
+  "description": "Free4talk Pro 2027 Edition - Powerful tools to enhance your Free4Talk experience with macOS glass UI and user insights.",
+  "version": "27.0.0",
   "author": {
     "email": "info@free4talk.me"
   },
@@ -26,14 +24,16 @@
         "https://www.free4talk.com/*"
       ],
       "resources": [
-        "assets/autoKick-Dp0kSw2g.js",
-        "assets/config-Ce4MWhzI.js",
+        "assets/api-Clt9UHcG.js",
+        "assets/config-wRKgJ-WU.js",
         "assets/logger-C6gXeMnu.js",
-        "assets/talkTime-oTnPlHeS.js",
-        "assets/spotify-FguK52dt.js",
+        "assets/dmBridge-DfkPn0Zq.js",
+        "assets/spotify-8CrGHF_Z.js",
         "assets/ytRemote-BcbPVE8e.js",
-        "assets/content.tsx-B2EXn89k.js",
-        "assets/mainWorldBridge.ts-CL6tIEi6.js"
+        "assets/main-PWpBs9g2.js",
+        "assets/content.tsx-Cfr-pRWd.js",
+        "assets/mainWorldBridge.ts-CnE3Edd9.js",
+        "assets/theme.css"
       ],
       "use_dynamic_url": false
     },
@@ -75,7 +75,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/content.tsx-loader-B5IfWW46.js"
+        "assets/content.tsx-loader-BbqEcBvJ.js"
       ],
       "matches": [
         "https://free4talk.com/*",
@@ -85,7 +85,7 @@
     },
     {
       "js": [
-        "assets/mainWorldBridge.ts-loader-Cnzr8nLo.js"
+        "assets/mainWorldBridge.ts-loader-CmahrsA1.js"
       ],
       "matches": [
         "https://free4talk.com/*",

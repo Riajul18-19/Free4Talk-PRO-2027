@@ -1,17 +1,10 @@
-# OS generated files
+# OS files
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# Logs and databases
+# Chrome unpacked metadata
+_metadata/
+
+# Node / Scratch
+node_modules/
 *.log
-*.sqlite
-
-# IDE & agent artifacts
-.agents/
-.gemini/
-.idea/
-.vscode/
-
-# Build and release archives
-*.zip

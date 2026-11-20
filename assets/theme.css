@@ -1,25 +1,42 @@
-/* Free4talk Pro - Modern Professional UI Theme */
+/* ==========================================================================
+   Free4talk Pro - macOS UI Blur & Glassmorphism Theme (2027 Edition - v27.0.0)
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
-  --font-mono: 'JetBrains Mono', monospace !important;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace !important;
+  
+  /* macOS Vibrant Cyan & Azure Brand Palette */
   --color-brand: #0ea5e9 !important;
   --color-brand-hi: #38bdf8 !important;
+  --color-brand-deep: #0284c7 !important;
+  
+  /* macOS Dark Frosted Glass Surfaces */
   --color-page: #0b0f17 !important;
-  --color-surface: #0f172a !important;
-  --color-raised: #1e293b !important;
-  --color-subtle: #1e293b !important;
-  --color-hover: #334155 !important;
+  --color-surface: rgba(15, 23, 42, 0.72) !important;
+  --color-raised: rgba(30, 41, 59, 0.6) !important;
+  --color-subtle: rgba(30, 41, 59, 0.45) !important;
+  --color-hover: rgba(51, 65, 85, 0.6) !important;
+  
+  /* Typography & High-Contrast Ink */
   --color-ink: #f8fafc !important;
   --color-ink-dim: #94a3b8 !important;
   --color-ink-faint: #64748b !important;
-  --color-line: rgba(255, 255, 255, 0.08) !important;
-  --color-line-strong: rgba(255, 255, 255, 0.12) !important;
+  
+  /* macOS Translucent Borders & Accents */
+  --color-line: rgba(255, 255, 255, 0.09) !important;
+  --color-line-strong: rgba(255, 255, 255, 0.16) !important;
   --color-success: #10b981 !important;
   --color-danger: #f43f5e !important;
+  
+  /* macOS Blur Constants */
+  --macos-blur-deep: blur(28px) saturate(190%) contrast(105%);
+  --macos-blur-card: blur(20px) saturate(180%);
+  --macos-blur-control: blur(14px) saturate(160%);
 }
 
+/* Base Body & Window Styling */
 body {
   margin: 0;
   padding: 0;
@@ -28,235 +45,362 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  color: #f8fafc;
+  color: var(--color-ink);
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+/* macOS Frosted Background Container */
+.bg-page {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.22) 0%, rgba(15, 23, 42, 0) 75%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 70%),
+    rgba(11, 15, 23, 0.88) !important;
+  backdrop-filter: var(--macos-blur-deep) !important;
+  -webkit-backdrop-filter: var(--macos-blur-deep) !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Subtle macOS specular window border & inner light */
+#root {
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* macOS Smooth Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(11, 15, 23, 0.6);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.25);
+  background: rgba(255, 255, 255, 0.16);
   border-radius: 9999px;
+  backdrop-filter: blur(8px);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.45);
 }
 
-/* Popup Container */
-.bg-page {
-  background: radial-gradient(circle at 50% -20px, rgba(14, 165, 233, 0.16) 0%, rgba(15, 23, 42, 0) 65%), #0b0f17 !important;
-  min-height: 100vh;
-}
-
-/* Header */
+/* ==========================================================================
+   macOS Titlebar & Window Controls (Traffic Lights)
+   ========================================================================== */
 header {
-  padding-bottom: 2px;
+  position: relative !important;
+  padding-top: 18px !important;
+  padding-bottom: 4px !important;
+  margin-bottom: 14px !important;
 }
+
+/* Native macOS Window Traffic Lights (Close / Minimize / Maximize) */
+header::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 52px;
+  height: 12px;
+  background: 
+    radial-gradient(circle at 6px 6px, #ff5f56 5px, rgba(255, 95, 86, 0.3) 5.5px, transparent 6px),
+    radial-gradient(circle at 22px 6px, #ffbd2e 5px, rgba(255, 189, 46, 0.3) 5.5px, transparent 6px),
+    radial-gradient(circle at 38px 6px, #27c93f 5px, rgba(39, 201, 63, 0.3) 5.5px, transparent 6px);
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+  transition: opacity 0.2s ease;
+}
+
+header:hover::before {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6)) brightness(1.08);
+}
+
+/* macOS Logo Styling with Frosted Glass Border */
 header img {
-  border-radius: 11px !important;
-  border: 1px solid rgba(56, 189, 248, 0.35) !important;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.18) 0%, rgba(2, 132, 199, 0.05) 100%) !important;
-  box-shadow: 0 0 16px -2px rgba(14, 165, 233, 0.35) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, rgba(2, 132, 199, 0.08) 100%) !important;
+  box-shadow: 0 4px 16px -2px rgba(14, 165, 233, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
   padding: 2px !important;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 header img:hover {
-  transform: scale(1.08) rotate(12deg) !important;
-  box-shadow: 0 0 24px rgba(14, 165, 233, 0.6) !important;
-  border-color: rgba(56, 189, 248, 0.6) !important;
+  transform: scale(1.08) rotate(8deg) !important;
+  box-shadow: 0 0 24px rgba(14, 165, 233, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+  border-color: rgba(56, 189, 248, 0.7) !important;
 }
 
-/* Header Brand Name */
+/* Header App Brand Name */
 .app-brand-title {
   font-size: 15px !important;
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
-  background: linear-gradient(135deg, #ffffff 40%, #7dd3fc 100%) !important;
+  background: linear-gradient(135deg, #ffffff 35%, #7dd3fc 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 2px 10px rgba(14, 165, 233, 0.25);
 }
 
-/* Pro Badge */
+/* macOS High-End PRO Badge */
 .pro-badge {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 1.5px 6.5px !important;
+  padding: 1.5px 7px !important;
   font-size: 9.5px !important;
   font-weight: 800 !important;
-  letter-spacing: 0.08em !important;
+  letter-spacing: 0.09em !important;
   text-transform: uppercase !important;
   border-radius: 9999px !important;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.25) 0%, rgba(59, 130, 246, 0.25) 100%) !important;
-  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.32) 0%, rgba(59, 130, 246, 0.28) 100%) !important;
+  border: 1px solid rgba(56, 189, 248, 0.5) !important;
   color: #38bdf8 !important;
-  box-shadow: 0 0 10px rgba(14, 165, 233, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(6px) !important;
 }
 
-/* Pulsing Live Dot */
+/* 2027 Version Tag */
+.version-tag-2027 {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #7dd3fc;
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 6px;
+  padding: 1px 5px;
+}
+
+/* Pulsing Status Dot */
 .animate-pulse-out {
   background-color: #0ea5e9 !important;
   box-shadow: 0 0 12px #0ea5e9, 0 0 4px #38bdf8 !important;
 }
 
-/* Cards */
+/* ==========================================================================
+   macOS Frosted Glass Cards (.card)
+   ========================================================================== */
 .card {
-  background: rgba(15, 23, 42, 0.65) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  background: rgba(18, 26, 44, 0.58) !important;
+  backdrop-filter: var(--macos-blur-card) !important;
+  -webkit-backdrop-filter: var(--macos-blur-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
   border-radius: 14px !important;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  margin-bottom: 11px !important;
+  box-shadow: 
+    0 8px 30px -4px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.09),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02) !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  margin-bottom: 12px !important;
+  position: relative;
+  overflow: hidden;
 }
+
+/* Subtle glass reflection sheen across card */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
+  pointer-events: none;
+  border-radius: 14px 14px 0 0;
+}
+
 .card:hover {
-  border-color: rgba(56, 189, 248, 0.24) !important;
-  box-shadow: 0 8px 25px -4px rgba(0, 0, 0, 0.5), 0 0 15px -3px rgba(14, 165, 233, 0.15) !important;
-  transform: translateY(-1px) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 
+    0 12px 40px -4px rgba(0, 0, 0, 0.52),
+    0 0 20px -2px rgba(14, 165, 233, 0.25),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.16) !important;
+  transform: translateY(-1.5px) !important;
 }
+
 .card-head {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-  padding-bottom: 7px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  padding-bottom: 8px !important;
   margin-bottom: 10px !important;
 }
+
 .eyebrow {
   font-size: 10.5px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
+  letter-spacing: 0.09em !important;
   color: #94a3b8 !important;
   text-transform: uppercase !important;
 }
 
-/* Switches */
+/* ==========================================================================
+   macOS Frosted Glass Switches (Toggle Controls)
+   ========================================================================== */
 button[role="switch"] {
-  height: 20px !important;
-  width: 36px !important;
+  height: 22px !important;
+  width: 38px !important;
   border-radius: 9999px !important;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  cursor: pointer !important;
 }
+
 button[role="switch"][aria-checked="true"],
 button[role="switch"].bg-brand {
   background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%) !important;
-  box-shadow: 0 0 14px rgba(14, 165, 233, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
-  border: 1px solid rgba(56, 189, 248, 0.5) !important;
-}
-button[role="switch"][aria-checked="false"] {
-  background: rgba(30, 41, 59, 0.8) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-button[role="switch"] > span {
-  height: 14px !important;
-  width: 14px !important;
-  border-radius: 9999px !important;
-  background: #ffffff !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35) !important;
-  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  box-shadow: 0 0 16px rgba(14, 165, 233, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+  border: 1px solid rgba(56, 189, 248, 0.55) !important;
 }
 
-/* Segmented Control (Live / On / Off toggle) */
+button[role="switch"][aria-checked="false"] {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+button[role="switch"] > span {
+  height: 16px !important;
+  width: 16px !important;
+  border-radius: 9999px !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35), 0 0 1px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.24s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* ==========================================================================
+   macOS Glass Segmented Control
+   ========================================================================== */
 div[role="group"][aria-label="Toggle extension"] {
-  background: rgba(15, 23, 42, 0.85) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  backdrop-filter: var(--macos-blur-control) !important;
+  -webkit-backdrop-filter: var(--macos-blur-control) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 12px !important;
   padding: 3px !important;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 }
+
 .seg {
   border-radius: 9px !important;
   font-size: 12px !important;
   font-weight: 600 !important;
   padding-block: 8px !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
 .seg-active {
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(2, 132, 199, 0.3) 100%) !important;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.25) 0%, rgba(2, 132, 199, 0.35) 100%) !important;
   color: #38bdf8 !important;
-  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 2px 10px rgba(14, 165, 233, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
 }
+
 .seg-active .seg-dot {
   background-color: #0ea5e9 !important;
-  box-shadow: 0 0 10px #0ea5e9 !important;
+  box-shadow: 0 0 12px #0ea5e9 !important;
 }
+
 .seg-active-off {
   background: rgba(30, 41, 59, 0.6) !important;
   color: #94a3b8 !important;
-  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Action Buttons */
+/* ==========================================================================
+   macOS Vibrant Action Buttons & Glass Controls
+   ========================================================================== */
 button.bg-brand, .bg-brand {
   background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 60%, #38bdf8 100%) !important;
-  box-shadow: 0 4px 16px -2px rgba(14, 165, 233, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
-  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 
+    0 4px 18px -2px rgba(14, 165, 233, 0.5), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
   border-radius: 11px !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
   color: #ffffff !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-button.bg-brand:hover:not(:disabled), .bg-brand:hover:not(:disabled) {
-  transform: translateY(-1.5px) !important;
-  box-shadow: 0 6px 22px -2px rgba(14, 165, 233, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
-  border-color: rgba(56, 189, 248, 0.6) !important;
-}
-button.bg-brand:active:not(:disabled), .bg-brand:active:not(:disabled) {
-  transform: translateY(0) !important;
-  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.4) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  backdrop-filter: blur(8px) !important;
 }
 
-/* Inputs & Textareas */
+button.bg-brand:hover:not(:disabled), .bg-brand:hover:not(:disabled) {
+  transform: translateY(-1.5px) !important;
+  box-shadow: 
+    0 8px 24px -2px rgba(14, 165, 233, 0.65), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(56, 189, 248, 0.7) !important;
+}
+
+button.bg-brand:active:not(:disabled), .bg-brand:active:not(:disabled) {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.45) !important;
+}
+
+/* ==========================================================================
+   macOS Frosted Inputs & Textareas
+   ========================================================================== */
 input, textarea {
   color: #f8fafc !important;
   font-family: var(--font-sans) !important;
 }
+
 .bg-raised, .bg-subtle {
-  background: rgba(15, 23, 42, 0.75) !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(15, 23, 42, 0.68) !important;
+  backdrop-filter: var(--macos-blur-control) !important;
+  -webkit-backdrop-filter: var(--macos-blur-control) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 10px !important;
-  transition: all 0.2s ease !important;
-}
-.bg-raised:focus-within, .bg-subtle:focus-within {
-  border-color: rgba(56, 189, 248, 0.55) !important;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.18) !important;
-  background: rgba(15, 23, 42, 0.9) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Chips */
+.bg-raised:focus-within, .bg-subtle:focus-within {
+  border-color: rgba(56, 189, 248, 0.65) !important;
+  box-shadow: 
+    0 0 0 3px rgba(14, 165, 233, 0.25), 
+    0 0 16px rgba(14, 165, 233, 0.25),
+    inset 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  background: rgba(15, 23, 42, 0.85) !important;
+}
+
+/* ==========================================================================
+   macOS Frosted Chips & Badges
+   ========================================================================== */
 .chip {
   border-radius: 8px !important;
   font-family: inherit !important;
   font-size: 11px !important;
   font-weight: 500 !important;
   letter-spacing: 0.01em !important;
-  text-transform: none !important;
   padding: 4px 10px !important;
-  background: rgba(30, 41, 59, 0.65) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(30, 41, 59, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #94a3b8 !important;
-  transition: all 0.15s ease !important;
+  transition: all 0.18s ease !important;
 }
+
 .chip:hover:not(:disabled) {
   background: rgba(51, 65, 85, 0.75) !important;
   color: #f8fafc !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
-}
-.chip-brand, button.chip[aria-checked="true"] {
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.22) 0%, rgba(2, 132, 199, 0.28) 100%) !important;
-  border-color: rgba(56, 189, 248, 0.5) !important;
-  color: #38bdf8 !important;
-  box-shadow: 0 0 10px rgba(14, 165, 233, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* Form Labels & Microcopy */
+.chip-brand, button.chip[aria-checked="true"] {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.25) 0%, rgba(2, 132, 199, 0.3) 100%) !important;
+  border-color: rgba(56, 189, 248, 0.55) !important;
+  color: #38bdf8 !important;
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Labels */
 label span.text-\[11px\] {
   font-size: 12px !important;
   font-weight: 600 !important;
@@ -268,12 +412,16 @@ label span.text-\[10px\] {
   line-height: 1.35 !important;
 }
 
-/* Footer */
+/* ==========================================================================
+   macOS Footer & Version 27 Metadata
+   ========================================================================== */
 footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
-  margin-top: 14px !important;
-  padding-top: 12px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  margin-top: 16px !important;
+  padding-top: 14px !important;
+  padding-bottom: 6px !important;
 }
+
 .foot-meta {
   font-size: 11px !important;
   color: #64748b !important;
@@ -281,4 +429,24 @@ footer {
 }
 .foot-meta:hover {
   color: #38bdf8 !important;
+}
+
+/* ==========================================================================
+   macOS Frosted Blur on Free4Talk Site Elements (Modals & Overlays)
+   ========================================================================== */
+.f4t-modal-overlay {
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  background: rgba(11, 15, 23, 0.75) !important;
+}
+
+.f4t-modal {
+  background: rgba(22, 30, 48, 0.85) !important;
+  backdrop-filter: var(--macos-blur-deep) !important;
+  -webkit-backdrop-filter: var(--macos-blur-deep) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 16px !important;
+  box-shadow: 
+    0 24px 70px -10px rgba(0, 0, 0, 0.65), 
+    0 0 1px 1px rgba(255, 255, 255, 0.15) !important;
 }
