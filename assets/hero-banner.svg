@@ -1,245 +1,242 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 390" width="100%" height="390">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" width="100%" height="420">
   <defs>
     <!-- Background Gradients -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080c14" />
-      <stop offset="50%" stop-color="#0b1120" />
-      <stop offset="100%" stop-color="#050810" />
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="40%" stop-color="#0a1224" />
+      <stop offset="80%" stop-color="#070c18" />
+      <stop offset="100%" stop-color="#03050a" />
     </linearGradient>
 
-    <!-- Glass Card Gradient -->
-    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.12)" />
-      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.03)" />
+    <!-- Glass Blue Card Gradient -->
+    <linearGradient id="glassBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(14, 165, 233, 0.16)" />
+      <stop offset="50%" stop-color="rgba(15, 23, 42, 0.65)" />
+      <stop offset="100%" stop-color="rgba(99, 102, 241, 0.12)" />
     </linearGradient>
 
-    <!-- Border Gradient -->
+    <!-- Glass Specular Border Gradient -->
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(56, 189, 248, 0.6)" />
-      <stop offset="40%" stop-color="rgba(255, 255, 255, 0.3)" />
-      <stop offset="100%" stop-color="rgba(14, 165, 233, 0.1)" />
+      <stop offset="0%" stop-color="rgba(56, 189, 248, 0.85)" />
+      <stop offset="35%" stop-color="rgba(255, 255, 255, 0.45)" />
+      <stop offset="70%" stop-color="rgba(99, 102, 241, 0.5)" />
+      <stop offset="100%" stop-color="rgba(14, 165, 233, 0.2)" />
     </linearGradient>
 
-    <!-- Title Glow Gradient -->
-    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="45%" stop-color="#7dd3fc" />
-      <stop offset="75%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#0ea5e9" />
+    <!-- Continuous Color-Changing Title Gradient -->
+    <linearGradient id="shimmerTitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ffffff;#38bdf8;#818cf8;#34d399;#38bdf8;#ffffff" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#818cf8;#34d399;#ffffff;#818cf8;#38bdf8" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#818cf8">
+        <animate attributeName="stop-color" values="#818cf8;#34d399;#ffffff;#38bdf8;#34d399;#818cf8" dur="6s" repeatCount="indefinite" />
+      </stop>
     </linearGradient>
 
-    <!-- Blob Gradients -->
-    <radialGradient id="blob1Grad" cx="50%" cy="50%" r="50%">
+    <!-- Radial Glowing Blobs -->
+    <radialGradient id="blobCyan" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.45" />
       <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="blob2Grad" cx="50%" cy="50%" r="50%">
+    <radialGradient id="blobIndigo" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#6366f1" stop-opacity="0.4" />
       <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="blob3Grad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
-    </radialGradient>
-
-    <!-- Drop Shadows -->
-    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.65" />
+    <!-- Filters -->
+    <filter id="glassShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#000000" flood-opacity="0.75" />
     </filter>
 
     <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#0ea5e9" flood-opacity="0.6" />
+      <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#38bdf8" flood-opacity="0.65" />
     </filter>
 
     <style>
+      /* Hardware-accelerated GPU animations with zero layout reflows */
       @keyframes floatBlob1 {
-        0%, 100% { transform: translate(0px, 0px) scale(1); }
-        50% { transform: translate(50px, -30px) scale(1.15); }
+        0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+        50% { transform: translate3d(45px, -25px, 0) scale(1.12); }
       }
       @keyframes floatBlob2 {
-        0%, 100% { transform: translate(0px, 0px) scale(1); }
-        50% { transform: translate(-40px, 35px) scale(1.1); }
-      }
-      @keyframes floatBlob3 {
-        0%, 100% { transform: translate(0px, 0px) scale(1); }
-        50% { transform: translate(30px, 40px) scale(0.95); }
+        0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+        50% { transform: translate3d(-35px, 30px, 0) scale(1.1); }
       }
       @keyframes spinRing {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
       }
-      @keyframes pulseGlowRing {
-        0%, 100% { transform: scale(1); opacity: 0.6; }
-        50% { transform: scale(1.08); opacity: 1; }
+      @keyframes counterSpin {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
       }
-      @keyframes badgeFloat1 {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
+      @keyframes rippleWave {
+        0% { r: 52px; opacity: 0.8; stroke-width: 2px; }
+        50% { r: 76px; opacity: 0.35; stroke-width: 1.5px; }
+        100% { r: 100px; opacity: 0; stroke-width: 1px; }
       }
-      @keyframes badgeFloat2 {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-7px); }
+      @keyframes badgeFloat {
+        0%, 100% { transform: translate3d(0, 0, 0); }
+        50% { transform: translate3d(0, -6px, 0); }
       }
-      @keyframes marqueeSlide {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+      @keyframes marqueeRun {
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-50%, 0, 0); }
       }
       @keyframes blinkCursor {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
-      @keyframes textShimmer {
-        0% { stop-color: #ffffff; }
-        50% { stop-color: #38bdf8; }
-        100% { stop-color: #ffffff; }
-      }
 
-      .blob-1 { animation: floatBlob1 14s ease-in-out infinite; }
-      .blob-2 { animation: floatBlob2 18s ease-in-out infinite; }
-      .blob-3 { animation: floatBlob3 16s ease-in-out infinite; }
-      .rotating-ring { transform-origin: 110px 185px; animation: spinRing 24s linear infinite; }
-      .pulse-ring { transform-origin: 110px 185px; animation: pulseGlowRing 3.5s ease-in-out infinite; }
-      .badge-1 { animation: badgeFloat1 3.5s ease-in-out infinite; }
-      .badge-2 { animation: badgeFloat2 4s ease-in-out infinite 0.5s; }
-      .badge-3 { animation: badgeFloat1 3.8s ease-in-out infinite 1s; }
-      .marquee-track { animation: marqueeSlide 22s linear infinite; }
+      .blob-cyan { animation: floatBlob1 12s ease-in-out infinite; will-change: transform; }
+      .blob-indigo { animation: floatBlob2 15s ease-in-out infinite; will-change: transform; }
+      
+      .circle-spin { transform-origin: 125px 200px; animation: spinRing 20s linear infinite; will-change: transform; }
+      .circle-counter { transform-origin: 125px 200px; animation: counterSpin 30s linear infinite; will-change: transform; }
+      .ripple-1 { transform-origin: 125px 200px; animation: rippleWave 3.5s cubic-bezier(0.1, 0.7, 0.1, 1) infinite; }
+      .ripple-2 { transform-origin: 125px 200px; animation: rippleWave 3.5s cubic-bezier(0.1, 0.7, 0.1, 1) infinite 1.75s; }
+
+      .float-1 { animation: badgeFloat 4s ease-in-out infinite; }
+      .float-2 { animation: badgeFloat 4.5s ease-in-out infinite 0.6s; }
+      .float-3 { animation: badgeFloat 4.2s ease-in-out infinite 1.2s; }
+      .float-4 { animation: badgeFloat 4.7s ease-in-out infinite 1.8s; }
+
+      .marquee-sliding { animation: marqueeRun 24s linear infinite; will-change: transform; }
       .cursor-blink { animation: blinkCursor 0.9s infinite; }
     </style>
   </defs>
 
-  <!-- Deep macOS Background -->
-  <rect width="880" height="390" rx="20" fill="url(#bgGrad)" />
+  <!-- Deep Canvas Background -->
+  <rect width="920" height="420" rx="24" fill="url(#bgGrad)" />
 
-  <!-- Animated Glowing Color Blobs -->
-  <g>
-    <circle class="blob-1" cx="220" cy="90" r="150" fill="url(#blob1Grad)" />
-    <circle class="blob-2" cx="720" cy="280" r="170" fill="url(#blob2Grad)" />
-    <circle class="blob-3" cx="780" cy="80" r="140" fill="url(#blob3Grad)" />
+  <!-- Animated Glowing Background Blobs -->
+  <circle class="blob-cyan" cx="240" cy="110" r="160" fill="url(#blobCyan)" />
+  <circle class="blob-indigo" cx="740" cy="300" r="180" fill="url(#blobIndigo)" />
+  <circle class="blob-cyan" cx="800" cy="90" r="140" fill="url(#blobCyan)" />
+
+  <!-- Main Glassy Blue Rounded Container -->
+  <g filter="url(#glassShadow)">
+    <rect x="25" y="20" width="870" height="380" rx="22" fill="url(#glassBlueGrad)" stroke="url(#borderGrad)" stroke-width="1.4" />
   </g>
 
-  <!-- Main macOS Frosted Glass Card Container -->
-  <g filter="url(#cardShadow)">
-    <rect x="25" y="22" width="830" height="346" rx="18" fill="url(#glassGrad)" stroke="url(#borderGrad)" stroke-width="1.2" />
+  <!-- macOS Window Top Bar & Traffic Lights -->
+  <g transform="translate(48, 44)">
+    <circle cx="0" cy="0" r="6" fill="#ff5f56" stroke="#e0443e" stroke-width="0.8" />
+    <circle cx="19" cy="0" r="6" fill="#ffbd2e" stroke="#dea123" stroke-width="0.8" />
+    <circle cx="38" cy="0" r="6" fill="#27c93f" stroke="#1aab29" stroke-width="0.8" />
+    <text x="62" y="4" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="11.5" font-weight="700" fill="#94a3b8" letter-spacing="0.04em">Free4Talk Pro V27 (2027 Edition) • macOS Glassy Blur Engine</text>
   </g>
 
-  <!-- macOS Window Controls (Traffic Lights) -->
-  <g transform="translate(48, 42)">
-    <circle cx="0" cy="0" r="5.5" fill="#ff5f56" stroke="#e0443e" stroke-width="0.8" />
-    <circle cx="18" cy="0" r="5.5" fill="#ffbd2e" stroke="#dea123" stroke-width="0.8" />
-    <circle cx="36" cy="0" r="5.5" fill="#27c93f" stroke="#1aab29" stroke-width="0.8" />
-    <text x="58" y="4" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="0.04em">Free4talk Pro • Version 27 (2027 Edition)</text>
-  </g>
+  <line x1="25" y1="66" x2="895" y2="66" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
 
-  <!-- Specular top inner divider line -->
-  <line x1="25" y1="62" x2="855" y2="62" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+  <!-- LEFT SECTION: CIRCLE ANIMATION & AVATAR LOGO -->
+  <g id="circle-animation-group">
+    <!-- Concentric Ripple Circles Expanding -->
+    <circle class="ripple-1" cx="125" cy="200" r="52" fill="none" stroke="#38bdf8" opacity="0.6" />
+    <circle class="ripple-2" cx="125" cy="200" r="52" fill="none" stroke="#6366f1" opacity="0.6" />
 
-  <!-- Left: Profile Logo with Rotating Ring -->
-  <g id="logo-section">
-    <!-- Pulsing Outer Cyan Glow Ring -->
-    <circle class="pulse-ring" cx="115" cy="185" r="58" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.7" />
-    
-    <!-- Rotating Text Circle -->
-    <g class="rotating-ring">
-      <path id="circlePath" d="M 115, 185 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" fill="none" />
-      <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="7.5" font-weight="700" fill="#38bdf8" letter-spacing="2.5px" opacity="0.85">
-        <textPath href="#circlePath">
-          • FREE4TALK PRO • VERSION 27 • 2027 EDITION • GLASS UI 
+    <!-- Dashed Circular Counter-Orbit Ring -->
+    <circle class="circle-counter" cx="125" cy="200" r="74" fill="none" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1.2" stroke-dasharray="6 8" />
+
+    <!-- Continuous Rotating Circular Text Ring -->
+    <g class="circle-spin">
+      <path id="heroRingPath" d="M 125, 200 m -62, 0 a 62,62 0 1,1 124,0 a 62,62 0 1,1 -124,0" fill="none" />
+      <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="7.8" font-weight="800" fill="#7dd3fc" letter-spacing="2.8px" opacity="0.95">
+        <textPath href="#heroRingPath">
+          ★ FREE4TALK PRO V27 ★ 2027 EDITION ★ MACOS GLASSY BLUR ★
         </textPath>
       </text>
     </g>
 
-    <!-- Glass Icon Backdrop -->
-    <rect x="79" y="149" width="72" height="72" rx="16" fill="rgba(14, 165, 233, 0.18)" stroke="rgba(56, 189, 248, 0.5)" stroke-width="1.2" filter="url(#cyanGlow)" />
+    <!-- Glassy Icon Center Tile -->
+    <rect x="85" y="160" width="80" height="80" rx="20" fill="rgba(14, 165, 233, 0.22)" stroke="rgba(56, 189, 248, 0.7)" stroke-width="1.5" filter="url(#cyanGlow)" />
     
-    <!-- Inner SVG Emblem (Microphone & Lightning Spark) -->
-    <g transform="translate(100, 166)">
-      <!-- Pro Mic Icon -->
-      <path d="M15 3a5 5 0 0 0-5 5v12a5 5 0 0 0 10 0V8a5 5 0 0 0-5-5z" fill="#ffffff" />
-      <path d="M6 15a9 9 0 0 0 18 0h-2.5a6.5 6.5 0 0 1-13 0H6z" fill="#38bdf8" />
-      <rect x="13.5" y="24" width="3" height="9" rx="1.5" fill="#38bdf8" />
-      <rect x="9" y="32" width="12" height="2.5" rx="1.2" fill="#38bdf8" />
-      <!-- Star Accent -->
-      <polygon points="26,4 27.5,7.5 31,8 28.5,10.5 29,14 26,12 23,14 23.5,10.5 21,8 24.5,7.5" fill="#facc15" />
+    <!-- Pro Emblem Icon -->
+    <g transform="translate(108, 178)">
+      <path d="M17 4a5.5 5.5 0 0 0-5.5 5.5v13a5.5 5.5 0 0 0 11 0v-13A5.5 5.5 0 0 0 17 4z" fill="#ffffff" />
+      <path d="M7 17a10 10 0 0 0 20 0h-2.8a7.2 7.2 0 0 1-14.4 0H7z" fill="#38bdf8" />
+      <rect x="15.2" y="27" width="3.6" height="11" rx="1.8" fill="#38bdf8" />
+      <rect x="10" y="36.5" width="14" height="3" rx="1.5" fill="#38bdf8" />
+      <polygon points="30,4 31.8,8.2 36,8.8 33,11.8 33.6,16 30,13.6 26.4,16 27,11.8 24,8.8 28.2,8.2" fill="#fbbf24" />
     </g>
   </g>
 
-  <!-- Right: Header Content & Typography -->
-  <g transform="translate(205, 125)">
-    <!-- Pro Badge & Version Pill -->
+  <!-- RIGHT SECTION: COLOR CHANGING TEXT & PILLS -->
+  <g transform="translate(230, 130)">
+    <!-- Top Pill Group -->
     <g>
-      <rect x="0" y="-28" width="62" height="22" rx="11" fill="rgba(14, 165, 233, 0.28)" stroke="rgba(56, 189, 248, 0.6)" stroke-width="1" />
-      <text x="31" y="-13" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="10.5" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.1em">PRO</text>
+      <rect x="0" y="-30" width="70" height="24" rx="12" fill="rgba(14, 165, 233, 0.3)" stroke="rgba(56, 189, 248, 0.7)" stroke-width="1.2" />
+      <text x="35" y="-14" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="11" font-weight="900" fill="#38bdf8" text-anchor="middle" letter-spacing="0.1em">PRO V27</text>
 
-      <rect x="70" y="-28" width="86" height="22" rx="11" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.18)" stroke-width="1" />
-      <text x="113" y="-13" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="10.5" font-weight="600" fill="#f8fafc" text-anchor="middle" letter-spacing="0.04em">v27.0.0 (2027)</text>
+      <rect x="80" y="-30" width="100" height="24" rx="12" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.22)" stroke-width="1" />
+      <text x="130" y="-14" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="11" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="0.04em">2027 EDITION</text>
 
-      <rect x="164" y="-28" width="112" height="22" rx="11" fill="rgba(16, 185, 129, 0.18)" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1" />
-      <circle cx="176" cy="-17" r="3.5" fill="#10b981" />
-      <text x="187" y="-13" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="10" font-weight="600" fill="#34d399" letter-spacing="0.03em">100% UNLOCKED</text>
+      <rect x="190" y="-30" width="128" height="24" rx="12" fill="rgba(34, 197, 94, 0.2)" stroke="rgba(34, 197, 94, 0.6)" stroke-width="1" />
+      <circle cx="204" cy="-18" r="4" fill="#22c55e" />
+      <text x="216" y="-14" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="10.5" font-weight="700" fill="#4ade80" letter-spacing="0.04em">100% UNLOCKED</text>
+
+      <rect x="328" y="-30" width="105" height="24" rx="12" fill="rgba(168, 85, 247, 0.2)" stroke="rgba(168, 85, 247, 0.5)" stroke-width="1" />
+      <text x="380" y="-14" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="10.5" font-weight="700" fill="#c084fc" text-anchor="middle">MACOS BLUR</text>
     </g>
 
-    <!-- Main Title -->
-    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="34" font-weight="800" fill="url(#titleGrad)" letter-spacing="-0.03em">
-      Free4talk Pro V27
+    <!-- Color-Changing Gradient Header -->
+    <text x="0" y="28" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif" font-size="38" font-weight="900" fill="url(#shimmerTitleGrad)" letter-spacing="-0.035em">
+      Free4Talk Pro V27
     </text>
 
-    <!-- Typing Subtitle -->
-    <g transform="translate(0, 52)">
-      <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="14.5" font-weight="500" fill="#94a3b8">
-        Supercharge your Free4Talk experience with macOS Acrylic Blur
+    <!-- Animated Subtitle with Typing Cursor -->
+    <g transform="translate(0, 60)">
+      <text font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" font-weight="600" fill="#e2e8f0">
+        Supercharged user insights, YouTube streamer, Spotify player &amp; macOS blur
       </text>
-      <rect class="cursor-blink" x="424" y="-12" width="2" height="15" fill="#38bdf8" />
+      <rect class="cursor-blink" x="515" y="-13" width="2.5" height="17" fill="#38bdf8" />
     </g>
 
-    <text x="0" y="74" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="12" font-weight="400" fill="#64748b">
-      User Insights • YouTube Sync • Spotify Player • Infinite DM &amp; Chat History • Spam Bot Kicker
+    <text x="0" y="86" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="12.5" font-weight="500" fill="#94a3b8">
+      Permanent DM History • 200 Saved Room Chats • SponsorBlock Skip • Spam Bot Shield
     </text>
 
-    <!-- Interactive Badges Row -->
-    <g transform="translate(0, 96)">
-      <!-- Badge 1 -->
-      <g class="badge-1">
-        <rect x="0" y="0" width="156" height="28" rx="8" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" />
-        <text x="14" y="18" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11" font-weight="600" fill="#e2e8f0">✦ macOS Frosted Blur</text>
+    <!-- Floating Glassy Badge Row -->
+    <g transform="translate(0, 110)">
+      <g class="float-1">
+        <rect x="0" y="0" width="150" height="32" rx="10" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.2" />
+        <text x="14" y="20" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11.5" font-weight="700" fill="#38bdf8"> macOS Acrylic Blur</text>
       </g>
 
-      <!-- Badge 2 -->
-      <g class="badge-2" transform="translate(166, 0)">
-        <rect x="0" y="0" width="150" height="28" rx="8" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" />
-        <text x="14" y="18" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11" font-weight="600" fill="#e2e8f0">🎵 Spotify &amp; YouTube</text>
+      <g class="float-2" transform="translate(160, 0)">
+        <rect x="0" y="0" width="158" height="32" rx="10" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.2" />
+        <text x="14" y="20" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11.5" font-weight="700" fill="#38bdf8">🎵 YouTube &amp; Spotify</text>
       </g>
 
-      <!-- Badge 3 -->
-      <g class="badge-3" transform="translate(326, 0)">
-        <rect x="0" y="0" width="144" height="28" rx="8" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" />
-        <text x="14" y="18" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11" font-weight="600" fill="#e2e8f0">🛡️ Smart Spam Shield</text>
+      <g class="float-3" transform="translate(328, 0)">
+        <rect x="0" y="0" width="150" height="32" rx="10" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.2" />
+        <text x="14" y="20" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11.5" font-weight="700" fill="#38bdf8">🛡️ Spam Bot Kicker</text>
       </g>
 
-      <!-- Badge 4 -->
-      <g class="badge-1" transform="translate(480, 0)">
-        <rect x="0" y="0" width="138" height="28" rx="8" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" />
-        <text x="14" y="18" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11" font-weight="600" fill="#e2e8f0">💬 Infinite Saved Chat</text>
+      <g class="float-4" transform="translate(488, 0)">
+        <rect x="0" y="0" width="144" height="32" rx="10" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.2" />
+        <text x="14" y="20" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11.5" font-weight="700" fill="#38bdf8">💬 200 Saved Chats</text>
       </g>
     </g>
   </g>
 
-  <!-- Modern Marquee Band (Bottom Ticker) -->
-  <g transform="translate(25, 316)">
-    <!-- Ticker Background Container -->
-    <rect x="0" y="0" width="830" height="36" rx="10" fill="rgba(10, 15, 26, 0.75)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+  <!-- BOTTOM CONTINUOUS SLIDING MARQUEE BAND -->
+  <g transform="translate(25, 344)">
+    <rect x="0" y="0" width="870" height="40" rx="14" fill="rgba(6, 12, 24, 0.85)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.2" />
     
-    <!-- Clip path to keep marquee inside the rounded box -->
-    <clipPath id="marqueeClip">
-      <rect x="2" y="2" width="826" height="32" rx="8" />
+    <clipPath id="marqueeClipBanner">
+      <rect x="2" y="2" width="866" height="36" rx="12" />
     </clipPath>
 
-    <g clip-path="url(#marqueeClip)">
-      <g class="marquee-track" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="10.5" font-weight="700" fill="#7dd3fc" letter-spacing="0.1em">
-        <text x="0" y="21">
-          FREE4TALK PRO V27 (2027 EDITION) • MACOS ACRYLIC BLUR • SPOTIFY STREAMING • YOUTUBE SYNC • INFINITE DM ARCHIVE • SAVED ROOM CHATS • AUTO SPAM BOT KICKER • LOBBY RUMBLE ARCADE • ROOM TIMER • 100% UNLOCKED • NO SUBSCRIPTION • 
-          FREE4TALK PRO V27 (2027 EDITION) • MACOS ACRYLIC BLUR • SPOTIFY STREAMING • YOUTUBE SYNC • INFINITE DM ARCHIVE • SAVED ROOM CHATS • AUTO SPAM BOT KICKER • LOBBY RUMBLE ARCADE • ROOM TIMER • 100% UNLOCKED • NO SUBSCRIPTION • 
+    <g clip-path="url(#marqueeClipBanner)">
+      <g class="marquee-sliding" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="11.5" font-weight="800" fill="#7dd3fc" letter-spacing="0.12em">
+        <text x="0" y="24">
+          FREE4TALK PRO V27 (2027) • MACOS ACRYLIC VIBRANCY • YOUTUBE ROOM BROADCASTER • SPOTIFY SYNC • PERMANENT DM LOGS • 200 SAVED ROOM CHATS • SPONSORBLOCK AUTO SKIP • LOBBY RUMBLE MINI-GAME • REAL AVATARS • ROOM TIMER • 100% UNLOCKED • ZERO TELEMETRY • 
+          FREE4TALK PRO V27 (2027) • MACOS ACRYLIC VIBRANCY • YOUTUBE ROOM BROADCASTER • SPOTIFY SYNC • PERMANENT DM LOGS • 200 SAVED ROOM CHATS • SPONSORBLOCK AUTO SKIP • LOBBY RUMBLE MINI-GAME • REAL AVATARS • ROOM TIMER • 100% UNLOCKED • ZERO TELEMETRY • 
         </text>
       </g>
     </g>

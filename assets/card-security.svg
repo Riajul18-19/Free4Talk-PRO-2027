@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 270" width="100%" height="270">
+  <defs>
+    <linearGradient id="bgSec" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18" />
+      <stop offset="50%" stop-color="#061a22" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="glassSec" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(16, 185, 129, 0.16)" />
+      <stop offset="100%" stop-color="rgba(14, 165, 233, 0.15)" />
+    </linearGradient>
+
+    <linearGradient id="borderSec" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(52, 211, 153, 0.85)" />
+      <stop offset="50%" stop-color="rgba(255, 255, 255, 0.35)" />
+      <stop offset="100%" stop-color="rgba(56, 189, 248, 0.45)" />
+    </linearGradient>
+
+    <linearGradient id="titleSecGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399">
+        <animate attributeName="stop-color" values="#34d399;#38bdf8;#f472b6;#ffffff;#34d399" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#f472b6;#ffffff;#34d399;#38bdf8" dur="5s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <filter id="softGlowSec">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#10b981" flood-opacity="0.5" />
+    </filter>
+
+    <style>
+      @keyframes spinShieldRadar { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes pulseShieldWave { 0%, 100% { r: 38px; opacity: 0.8; } 50% { r: 58px; opacity: 0.15; } }
+      .shield-radar { transform-origin: 85px 135px; animation: spinShieldRadar 10s linear infinite; will-change: transform; }
+      .shield-wave { transform-origin: 85px 135px; animation: pulseShieldWave 3.2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="880" height="270" rx="20" fill="url(#bgSec)" />
+  <rect x="15" y="15" width="850" height="240" rx="18" fill="url(#glassSec)" stroke="url(#borderSec)" stroke-width="1.2" filter="url(#softGlowSec)" />
+
+  <!-- Circle Animation: Security Sonar Radar with Shield Emblem -->
+  <g id="security-circle-group">
+    <circle cx="85" cy="135" r="54" fill="rgba(16, 185, 129, 0.08)" stroke="rgba(52, 211, 153, 0.35)" stroke-width="1.2" />
+    <circle class="shield-wave" cx="85" cy="135" r="38" fill="none" stroke="#34d399" stroke-width="1.5" />
+
+    <!-- Radar Sweep Orbit -->
+    <g class="shield-radar">
+      <circle cx="85" cy="135" r="44" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.2" stroke-dasharray="10 8" />
+      <circle cx="85" cy="91" r="4.5" fill="#34d399" />
+    </g>
+
+    <!-- Shield Icon Badge in Center -->
+    <circle cx="85" cy="135" r="22" fill="#065f46" stroke="#34d399" stroke-width="1.5" />
+    <path d="M85 121 L96 126 C96 137 90 145 85 149 C80 145 74 137 74 126 Z" fill="#34d399" />
+    <polyline points="80,135 83,138 90,131" fill="none" stroke="#064e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Header with Color Changing Title -->
+  <g transform="translate(170, 52)">
+    <rect x="0" y="-18" width="82" height="20" rx="10" fill="rgba(16, 185, 129, 0.25)" stroke="#10b981" stroke-width="0.8" />
+    <text x="41" y="-4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#6ee7b7" text-anchor="middle">DEFENSE</text>
+    <text x="94" y="-4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">AUTOMATION, SAFETY &amp; ARCADE</text>
+
+    <text x="0" y="22" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="22" font-weight="900" fill="url(#titleSecGrad)" letter-spacing="-0.02em">
+      Spam Bot Shield, Auto Kick &amp; Room Utilities
+    </text>
+  </g>
+
+  <!-- Two Column Content Breakdown -->
+  <g transform="translate(170, 115)">
+    <!-- Column 1: Spam Bot Shield & Auto Kick -->
+    <g>
+      <rect x="0" y="0" width="320" height="116" rx="12" fill="rgba(2, 6, 23, 0.45)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+      <text x="16" y="24" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#34d399">DEFENSE &amp; AUTO-KICK (PRO)</text>
+      
+      <text x="16" y="46" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Kick Spam Bots (Free): auto-ejects tracker-flagged room hoppers</text>
+      <text x="16" y="66" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Auto Kick: blocklists by User ID, handle, or unverified status</text>
+      <text x="16" y="86" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Whitelist safe: room owners, co-owners &amp; guests never kicked</text>
+      <text x="16" y="104" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Room Timer: unobtrusive call duration clock below controls</text>
+    </g>
+
+    <!-- Column 2: Welcome, Avatars & Lobby Rumble -->
+    <g transform="translate(340, 0)">
+      <rect x="0" y="0" width="330" height="116" rx="12" fill="rgba(2, 6, 23, 0.45)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+      <text x="16" y="24" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#f472b6">WELCOME, AVATARS &amp; ARCADE</text>
+      
+      <text x="16" y="46" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Welcome Message: auto-greet newcomers with {name} tag</text>
+      <text x="16" y="66" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Unverified Avatars: reveals real photos instead of plain initials</text>
+      <text x="16" y="86" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Lobby Rumble: smash letters, shatter buttons, drop room blocks</text>
+      <text x="16" y="104" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">✓ 3 Arcade Modes: 45s Wreck Run, Daily Wreck, Free Wreck</text>
+    </g>
+  </g>
+</svg>

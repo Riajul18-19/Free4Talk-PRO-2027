@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 270" width="100%" height="270">
+  <defs>
+    <linearGradient id="bgIns" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18" />
+      <stop offset="50%" stop-color="#0d182e" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="glassIns" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(14, 165, 233, 0.18)" />
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.7)" />
+    </linearGradient>
+
+    <linearGradient id="borderIns" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(56, 189, 248, 0.8)" />
+      <stop offset="50%" stop-color="rgba(255, 255, 255, 0.35)" />
+      <stop offset="100%" stop-color="rgba(99, 102, 241, 0.4)" />
+    </linearGradient>
+
+    <linearGradient id="titleInsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#818cf8;#34d399;#ffffff;#38bdf8" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#818cf8">
+        <animate attributeName="stop-color" values="#818cf8;#34d399;#ffffff;#38bdf8;#818cf8" dur="5s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <filter id="softGlowIns">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#0ea5e9" flood-opacity="0.5" />
+    </filter>
+
+    <style>
+      @keyframes radarRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes pulseRadarRing { 0%, 100% { r: 42px; opacity: 0.8; } 50% { r: 64px; opacity: 0.2; } }
+      .radar-sweep { transform-origin: 85px 135px; animation: radarRotate 6s linear infinite; will-change: transform; }
+      .radar-ring { transform-origin: 85px 135px; animation: pulseRadarRing 3s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Card Background -->
+  <rect width="880" height="270" rx="20" fill="url(#bgIns)" />
+  <rect x="15" y="15" width="850" height="240" rx="18" fill="url(#glassIns)" stroke="url(#borderIns)" stroke-width="1.2" filter="url(#softGlowIns)" />
+
+  <!-- Circle Animation: Radar Scanner -->
+  <g id="radar-group">
+    <circle cx="85" cy="135" r="54" fill="rgba(14, 165, 233, 0.08)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.2" />
+    <circle cx="85" cy="135" r="36" fill="rgba(14, 165, 233, 0.12)" stroke="rgba(56, 189, 248, 0.5)" stroke-width="1" />
+    <circle cx="85" cy="135" r="18" fill="rgba(14, 165, 233, 0.2)" stroke="#38bdf8" stroke-width="1.5" />
+    <circle class="radar-ring" cx="85" cy="135" r="42" fill="none" stroke="#38bdf8" stroke-width="1.5" />
+    
+    <!-- Radar Sweep Line -->
+    <g class="radar-sweep">
+      <line x1="85" y1="135" x2="85" y2="81" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
+      <polygon points="85,135 125,95 85,81" fill="rgba(56, 189, 248, 0.25)" />
+    </g>
+
+    <circle cx="85" cy="135" r="4" fill="#ffffff" />
+    <circle cx="108" cy="116" r="3" fill="#22c55e" />
+    <circle cx="68" cy="150" r="3" fill="#38bdf8" />
+  </g>
+
+  <!-- Header with Color Changing Title -->
+  <g transform="translate(170, 52)">
+    <rect x="0" y="-18" width="88" height="20" rx="10" fill="rgba(14, 165, 233, 0.25)" stroke="#38bdf8" stroke-width="0.8" />
+    <text x="44" y="-4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#38bdf8" text-anchor="middle">INTELLIGENCE</text>
+    <text x="100" y="-4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">PROFILE AUDIT &amp; SOCIAL METRICS</text>
+
+    <text x="0" y="22" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="22" font-weight="900" fill="url(#titleInsGrad)" letter-spacing="-0.02em">
+      Know Who You Talk To Before Entering Any Room
+    </text>
+  </g>
+
+  <!-- Two Column Content Breakdown -->
+  <g transform="translate(170, 115)">
+    <!-- Column 1: What It Shows -->
+    <g>
+      <rect x="0" y="0" width="320" height="116" rx="12" fill="rgba(2, 6, 23, 0.45)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+      <text x="16" y="24" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">WHAT IT SHOWS</text>
+      
+      <text x="16" y="46" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Most-used languages and English proficiency levels (A1 - C2)</text>
+      <text x="16" y="66" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Favourite conversation topics and recurring room themes</text>
+      <text x="16" y="86" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Top speaking connections and closest discussion partners</text>
+      <text x="16" y="104" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Total rooms created, joined, or muted in</text>
+    </g>
+
+    <!-- Column 2: Where It Appears -->
+    <g transform="translate(340, 0)">
+      <rect x="0" y="0" width="330" height="116" rx="12" fill="rgba(2, 6, 23, 0.45)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+      <text x="16" y="24" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#818cf8">WHERE IT APPEARS</text>
+      
+      <text x="16" y="46" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Small info badge on every person's card in room for instant popover</text>
+      <text x="16" y="66" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Deeply embedded inside Free4Talk's native profile modal</text>
+      <text x="16" y="86" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#e2e8f0">• Direct one-click link to full analytics on free4talk.me tracker</text>
+      <text x="16" y="104" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#34d399">✓ 100% Unlocked in V27 (Zero Keys or Fees Required)</text>
+    </g>
+  </g>
+</svg>
