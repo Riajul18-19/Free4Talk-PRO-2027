@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="100%" height="260">
+  <defs>
+    <linearGradient id="bgInst" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18" />
+      <stop offset="50%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="glassInst" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(14, 165, 233, 0.18)" />
+      <stop offset="100%" stop-color="rgba(16, 185, 129, 0.12)" />
+    </linearGradient>
+
+    <linearGradient id="borderInst" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(56, 189, 248, 0.85)" />
+      <stop offset="50%" stop-color="rgba(255, 255, 255, 0.35)" />
+      <stop offset="100%" stop-color="rgba(52, 211, 153, 0.4)" />
+    </linearGradient>
+
+    <linearGradient id="titleInstGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#34d399;#818cf8;#ffffff;#38bdf8" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#34d399">
+        <animate attributeName="stop-color" values="#34d399;#818cf8;#ffffff;#38bdf8;#34d399" dur="5s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <filter id="softGlowInst">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#38bdf8" flood-opacity="0.5" />
+    </filter>
+
+    <style>
+      @keyframes pulseStepRing { 0%, 100% { r: 18px; opacity: 0.8; } 50% { r: 26px; opacity: 0.2; } }
+      .step-ring-1 { transform-origin: 32px 32px; animation: pulseStepRing 3s ease-in-out infinite; }
+      .step-ring-2 { transform-origin: 32px 32px; animation: pulseStepRing 3s ease-in-out infinite 1s; }
+      .step-ring-3 { transform-origin: 32px 32px; animation: pulseStepRing 3s ease-in-out infinite 2s; }
+    </style>
+  </defs>
+
+  <rect width="880" height="260" rx="20" fill="url(#bgInst)" />
+  <rect x="15" y="15" width="850" height="230" rx="18" fill="url(#glassInst)" stroke="url(#borderInst)" stroke-width="1.2" filter="url(#softGlowInst)" />
+
+  <!-- Title Header -->
+  <g transform="translate(35, 30)">
+    <rect x="0" y="0" width="84" height="20" rx="6" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8" stroke-width="0.8" />
+    <text x="42" y="14" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="900" fill="#38bdf8" text-anchor="middle">SETUP GUIDE</text>
+    <text x="96" y="14" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">ONE-MINUTE LOAD UNPACKED INSTALLATION</text>
+
+    <text x="0" y="44" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="22" font-weight="900" fill="url(#titleInstGrad)" letter-spacing="-0.02em">
+      Quick Start Installation in 3 Simple Steps
+    </text>
+  </g>
+
+  <!-- 3 Step Cards Grid -->
+  <g transform="translate(35, 95)">
+    <!-- Step 1 Card -->
+    <g>
+      <rect x="0" y="0" width="255" height="135" rx="14" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" />
+      <!-- Step Circle -->
+      <g transform="translate(18, 16)">
+        <circle class="step-ring-1" cx="18" cy="18" r="18" fill="none" stroke="#38bdf8" stroke-width="1.5" />
+        <circle cx="18" cy="18" r="16" fill="#0ea5e9" />
+        <text x="18" y="23" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">01</text>
+      </g>
+      <text x="64" y="38" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Download Package</text>
+      <text x="18" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#94a3b8">Download Free4talk-Pro-v27-2027.zip</text>
+      <text x="18" y="88" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#94a3b8">from GitHub releases and extract</text>
+      <text x="18" y="106" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#38bdf8">the folder on your computer.</text>
+    </g>
+
+    <!-- Step 2 Card -->
+    <g transform="translate(275, 0)">
+      <rect x="0" y="0" width="255" height="135" rx="14" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(99, 102, 241, 0.35)" stroke-width="1" />
+      <g transform="translate(18, 16)">
+        <circle class="step-ring-2" cx="18" cy="18" r="18" fill="none" stroke="#818cf8" stroke-width="1.5" />
+        <circle cx="18" cy="18" r="16" fill="#6366f1" />
+        <text x="18" y="23" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">02</text>
+      </g>
+      <text x="64" y="38" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Enable Dev Mode</text>
+      <text x="18" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#94a3b8">Open chrome://extensions in Chrome,</text>
+      <text x="18" y="88" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#94a3b8">Brave, or Edge browser and toggle</text>
+      <text x="18" y="106" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#818cf8">"Developer mode" on top-right.</text>
+    </g>
+
+    <!-- Step 3 Card -->
+    <g transform="translate(550, 0)">
+      <rect x="0" y="0" width="255" height="135" rx="14" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(34, 197, 94, 0.35)" stroke-width="1" />
+      <g transform="translate(18, 16)">
+        <circle class="step-ring-3" cx="18" cy="18" r="18" fill="none" stroke="#4ade80" stroke-width="1.5" />
+        <circle cx="18" cy="18" r="16" fill="#22c55e" />
+        <text x="18" y="23" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">03</text>
+      </g>
+      <text x="64" y="38" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Load Unpacked</text>
+      <text x="18" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#94a3b8">Click "Load unpacked" on top-left,</text>
+      <text x="18" y="88" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#94a3b8">select the Free4talk-Pro-v27 folder,</text>
+      <text x="18" y="106" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" fill="#34d399">and open free4talk.com!</text>
+    </g>
+  </g>
+</svg>

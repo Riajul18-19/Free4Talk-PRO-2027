@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="100%" height="260">
+  <defs>
+    <linearGradient id="bgPriv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18" />
+      <stop offset="50%" stop-color="#091c1b" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="glassPriv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(16, 185, 129, 0.16)" />
+      <stop offset="100%" stop-color="rgba(14, 165, 233, 0.12)" />
+    </linearGradient>
+
+    <linearGradient id="borderPriv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(52, 211, 153, 0.85)" />
+      <stop offset="50%" stop-color="rgba(255, 255, 255, 0.35)" />
+      <stop offset="100%" stop-color="rgba(56, 189, 248, 0.4)" />
+    </linearGradient>
+
+    <linearGradient id="titlePrivGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399">
+        <animate attributeName="stop-color" values="#34d399;#38bdf8;#818cf8;#ffffff;#34d399" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#818cf8;#ffffff;#34d399;#38bdf8" dur="5s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <filter id="softGlowPriv">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#10b981" flood-opacity="0.5" />
+    </filter>
+
+    <style>
+      @keyframes pulseShieldCircle { 0%, 100% { r: 42px; opacity: 0.8; } 50% { r: 62px; opacity: 0.15; } }
+      .priv-ring { transform-origin: 85px 130px; animation: pulseShieldCircle 3.2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="880" height="260" rx="20" fill="url(#bgPriv)" />
+  <rect x="15" y="15" width="850" height="230" rx="18" fill="url(#glassPriv)" stroke="url(#borderPriv)" stroke-width="1.2" filter="url(#softGlowPriv)" />
+
+  <!-- Circle Animation: Pulsing Security Lock Shield -->
+  <g id="privacy-circle-group">
+    <circle cx="85" cy="130" r="54" fill="rgba(16, 185, 129, 0.08)" stroke="rgba(52, 211, 153, 0.35)" stroke-width="1.2" />
+    <circle class="priv-ring" cx="85" cy="130" r="42" fill="none" stroke="#34d399" stroke-width="1.5" />
+
+    <circle cx="85" cy="130" r="28" fill="#064e3b" stroke="#34d399" stroke-width="1.5" />
+    <!-- Padlock Icon -->
+    <rect x="74" y="125" width="22" height="18" rx="4" fill="#34d399" />
+    <path d="M78 125 V119 A7 7 0 0 1 92 119 V125" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" />
+    <circle cx="85" cy="133" r="2.5" fill="#064e3b" />
+    <line x1="85" y1="135" x2="85" y2="139" stroke="#064e3b" stroke-width="2" />
+  </g>
+
+  <!-- Header with Color Changing Title -->
+  <g transform="translate(170, 48)">
+    <rect x="0" y="-18" width="80" height="20" rx="6" fill="rgba(16, 185, 129, 0.25)" stroke="#10b981" stroke-width="0.8" />
+    <text x="40" y="-4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="900" fill="#6ee7b7" text-anchor="middle">PRIVACY</text>
+    <text x="92" y="-4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">ZERO TELEMETRY &amp; LOCAL-FIRST ARCHITECTURE</text>
+
+    <text x="0" y="22" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="22" font-weight="900" fill="url(#titlePrivGrad)" letter-spacing="-0.02em">
+      Your Data Stays Strictly On Your Device
+    </text>
+  </g>
+
+  <!-- 4 Privacy Points in 2x2 Grid -->
+  <g transform="translate(170, 105)">
+    <!-- Point 1 -->
+    <g>
+      <rect x="0" y="0" width="320" height="54" rx="8" fill="rgba(2, 6, 23, 0.45)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.8" />
+      <text x="14" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="800" fill="#34d399">🔒 Zero Audio Listening</text>
+      <text x="14" y="40" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" fill="#94a3b8">Never monitors, listens to, or analyzes microphone audio.</text>
+    </g>
+
+    <!-- Point 2 -->
+    <g transform="translate(340, 0)">
+      <rect x="0" y="0" width="330" height="54" rx="8" fill="rgba(2, 6, 23, 0.45)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.8" />
+      <text x="14" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">💾 100% Local Device Storage</text>
+      <text x="14" y="40" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" fill="#94a3b8">Saved chats &amp; DMs remain in browser IndexedDB; no cloud sync.</text>
+    </g>
+
+    <!-- Point 3 -->
+    <g transform="translate(0, 64)">
+      <rect x="0" y="0" width="320" height="54" rx="8" fill="rgba(2, 6, 23, 0.45)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.8" />
+      <text x="14" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="800" fill="#1ed760">🔑 Direct Spotify Authentication</text>
+      <text x="14" y="40" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" fill="#94a3b8">Official OAuth tokens stay local; passwords are never seen.</text>
+    </g>
+
+    <!-- Point 4 -->
+    <g transform="translate(340, 64)">
+      <rect x="0" y="0" width="330" height="54" rx="8" fill="rgba(2, 6, 23, 0.45)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.8" />
+      <text x="14" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="800" fill="#c084fc">🛡️ Private Hash Lookups</text>
+      <text x="14" y="40" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" fill="#94a3b8">SponsorBlock queries use anonymized hashes; zero URL tracking.</text>
+    </g>
+  </g>
+</svg>
