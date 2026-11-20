@@ -1,0 +1,46 @@
+{
+  "name": "@riajul18-19/free4talk-pro",
+  "version": "27.0.0",
+  "type": "module",
+  "description": "Free4Talk Pro V27 (2027 Edition) - Chrome Extension with macOS Acrylic Glass Blur UI, Profile Insights, Spotify Player, and YouTube Room Streamer",
+  "main": "service-worker-loader.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Riajul18-19/free4talk-pro.git"
+  },
+  "keywords": [
+    "free4talk",
+    "chrome-extension",
+    "free4talk-pro",
+    "macos-blur",
+    "glassmorphism",
+    "youtube-streamer",
+    "spotify-player",
+    "sponsorblock"
+  ],
+  "author": "Riajul18-19 <345948588+Riajul18-19@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Riajul18-19/free4talk-pro/issues"
+  },
+  "homepage": "https://github.com/Riajul18-19/free4talk-pro#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "package": "node scripts/package.js",
+    "test": "node --check assets/*.js"
+  },
+  "files": [
+    "manifest.json",
+    "logo.png",
+    "service-worker-loader.js",
+    "assets",
+    "public",
+    "src",
+    "index.html",
+    "style.css",
+    "script.js",
+    "README.md"
+  ]
+}

@@ -7,4 +7,6 @@ _metadata/
 
 # Node / Scratch
 node_modules/
+dist/
+*.zip
 *.log
